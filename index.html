@@ -5,6 +5,10 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="description"
+			content="A todo app challenge by Frontend Mentor with light/dark theme, filtering, and drag & drop." />
+
 		<!-- displays site properly based on user's device -->
 
 		<link
@@ -12,15 +16,17 @@
 			type="image/png"
 			sizes="32x32"
 			href="scr/asset/icon/favicon-32x32.png" />
+		<!-- fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap"
+			rel="stylesheet" />
+		<link rel="stylesheet" href="scr/css/style.css" />
 
 		<title>Frontend Mentor | Todo app</title>
 
 		<style>
-			body {
-				background: url(scr/asset/images/bg-desktop-light.jpg);
-				background-repeat: no-repeat;
-				background-size: cover;
-			}
 			.attribution {
 				font-size: 11px;
 				text-align: center;
@@ -50,6 +56,8 @@
 				<!--input -->
 
 				<div class="input-container">
+					<div class="input-circle"></div>
+
 					<input
 						type="text"
 						id="new-todo"
