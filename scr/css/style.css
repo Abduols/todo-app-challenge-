@@ -86,6 +86,8 @@ ul {
 
 /* Dark Theme */
 [data-theme="dark"] {
+	background-image: url("../asset/images/bg-desktop-dark.jpg");
+
 	--bg-color: var(--dt-bg);
 	--todo-bg: var(--dt-todo-bg);
 	--text-primary: var(--dt-text-primary);
@@ -102,6 +104,7 @@ body {
 	font-size: 18px;
 	font-weight: 400;
 	color: var(--text-color);
+	background-color: var(--bg-color);
 
 	content: "";
 	position: absolute;
@@ -113,11 +116,7 @@ body {
 	background-repeat: no-repeat;
 
 	z-index: 0;
-	transition: background-image 0.3s ease;
-}
-
-[data-theme="dark"] body::before {
-	background-image: url("../asset/images/bg-desktop-dark.jpg");
+	transition: all 0.3s ease;
 }
 
 /* ===== APP CONTAINER ===== */

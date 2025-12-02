@@ -55,20 +55,27 @@
 
 				<!--input -->
 
-				<div class="input-container">
-					<div class="input-circle"></div>
-
-					<input
-						type="text"
-						id="new-todo"
-						class="todo-input"
-						placeholder="Create a new todo..." />
-				</div>
+				<form class="todo-form" id="todo-form" novalidate>
+					<div class="input-container">
+						<div class="input-circle"></div>
+						<input
+							type="text"
+							id="new-todo"
+							class="todo-input"
+							placeholder="Create a new todo..."
+							aria-label="Create a new todo"
+							autocomplete="off" />
+					</div>
+				</form>
 			</header>
 
 			<!-- Main content -->
 			<main class="app-main">
 				<div class="todo-container">
+					<ul class="todo-list" id="todo-list" aria-label="Todo items">
+						<!-- Todos will be inserted here by JavaScript -->
+					</ul>
+
 					<!-- Todo list -->
 					<ul class="todo-list" id="todo-list" aria-label="Todo items"></ul>
 
@@ -133,5 +140,7 @@
 				</div>
 			</footer>
 		</div>
+
+		<script src="scr/js/app.js"></script>
 	</body>
 </html>
