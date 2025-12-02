@@ -11,14 +11,13 @@
 			rel="icon"
 			type="image/png"
 			sizes="32x32"
-			href="./images/favicon-32x32.png" />
+			href="scr/asset/icon/favicon-32x32.png" />
 
 		<title>Frontend Mentor | Todo app</title>
 
-		<!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
 		<style>
 			body {
-				background: url(images/bg-desktop-light.jpg);
+				background: url(scr/asset/images/bg-desktop-light.jpg);
 				background-repeat: no-repeat;
 				background-size: cover;
 			}
@@ -32,17 +31,99 @@
 		</style>
 	</head>
 	<body>
-		Todo
+		<div class="app-container">
+			<!-- Header -->
+			<header class="header">
+				<div class="header-content">
+					<h1 class="app-title">TODO</h1>
+					<button
+						class="theme-toggle"
+						id="theme-toggle"
+						aria-label="Toggle theme mode">
+						<img
+							src="scr/asset/icon/icon-sun.svg"
+							alt="light-theme"
+							class="theme-icon" />
+					</button>
+				</div>
 
-		<!-- Add dynamic number -->
-		items left All Active Completed Clear Completed Drag and drop to reorder
-		list
+				<!--input -->
 
-		<div class="attribution">
-			Challenge by
-			<a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-				>Frontend Mentor</a
-			>. Coded by <a href="#">Your Name Here</a>.
+				<div class="input-container">
+					<input
+						type="text"
+						id="new-todo"
+						class="todo-input"
+						placeholder="Create a new todo..." />
+				</div>
+			</header>
+
+			<!-- Main content -->
+			<main class="app-main">
+				<div class="todo-container">
+					<!-- Todo list -->
+					<ul class="todo-list" id="todo-list" aria-label="Todo items"></ul>
+
+					<!-- controls -->
+					<div class="todo-controls">
+						<div class="todo-stats">
+							<span class="items-count" id="items-count">
+								<span id="active-count">0</span> items left
+							</span>
+						</div>
+
+						<!-- Filter buttons - Desktop -->
+						<div class="todo-filters" role="tablist" aria-label="Filter todos">
+							<button
+								class="filter-btn active"
+								data-filter="all"
+								role="tab"
+								aria-selected="true">
+								All
+							</button>
+							<button
+								class="filter-btn"
+								data-filter="active"
+								role="tab"
+								aria-selected="false">
+								Active
+							</button>
+							<button
+								class="filter-btn"
+								data-filter="completed"
+								role="tab"
+								aria-selected="false">
+								Completed
+							</button>
+						</div>
+
+						<button
+							class="clear-btn"
+							id="clear-completed"
+							aria-label="Clear completed todos">
+							Clear Completed
+						</button>
+					</div>
+				</div>
+
+				<!-- Drag hint -->
+				<p class="drag-hint" aria-hidden="true">
+					Drag and drop to reorder list
+				</p>
+			</main>
+
+			<!-- Footer -->
+			<footer class="app-footer">
+				<div class="attribution">
+					Challenge by
+					<a
+						href="https://www.frontendmentor.io?ref=challenge"
+						target="_blank"
+						rel="noopener noreferrer"
+						>Frontend Mentor</a
+					>. Coded by <a href="#" id="coder-link">Your Name</a>.
+				</div>
+			</footer>
 		</div>
 	</body>
 </html>
