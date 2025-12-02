@@ -152,13 +152,16 @@ function renderTodos() {
 					todo.id
 				})" 
 				        aria-label="Delete todo">
-					<img src="../asset/icon/icon-cross.svg" alt="Delete">
+					<img src="scr/asset/icon/icon-cross.svg" alt="Delete">
 				</button>
 			</div>
 		</li>
 	`
 		)
 		.join("");
+
+	// Initialize drag and drop
+	initDragAndDrop();
 }
 
 function renderEmptyState() {
@@ -332,41 +335,6 @@ function handleDragEnd() {
 	document.querySelectorAll(".todo-item").forEach((item) => {
 		item.classList.remove("drag-over");
 	});
-}
-
-// Update renderTodos to initialize drag and drop
-function renderTodos() {
-	const filteredTodos = getFilteredTodos();
-	updateItemsCount();
-
-	if (filteredTodos.length === 0) {
-		renderEmptyState();
-		return;
-	}
-
-	dom.todoList.innerHTML = filteredTodos
-		.map(
-			(todo) => `
-		<li class="todo-item ${todo.completed ? "completed" : ""}" data-id="${todo.id}">
-			<div class="todo-content" onclick="toggleTodo(${todo.id})">
-				<div class="todo-check">
-					<span class="check-circle ${todo.completed ? "checked" : ""}"></span>
-				</div>
-				<span class="todo-text">${escapeHtml(todo.text)}</span>
-				<button class="todo-delete" onclick="event.stopPropagation(); deleteTodo(${
-					todo.id
-				})" 
-				        aria-label="Delete todo">
-					<img src="./images/icon-cross.svg" alt="Delete">
-				</button>
-			</div>
-		</li>
-	`
-		)
-		.join("");
-
-	// Initialize drag and drop
-	initDragAndDrop();
 }
 
 // Add CSS for drag and drop
