@@ -1,0 +1,114 @@
+/** @format */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 100%;
+}
+
+body {
+	min-height: 100vh;
+	text-rendering: optimizeSpeed;
+	line-height: 1.5;
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+button,
+input {
+	font: inherit;
+	color: inherit;
+}
+
+button {
+	cursor: pointer;
+	background: none;
+	border: none;
+}
+
+ul {
+	list-style: none;
+}
+
+/* Focus styles */
+:focus-visible {
+	outline: 2px solid var(--bright-blue);
+	outline-offset: 2px;
+}
+
+/* ===== CSS VARIABLES ===== */
+:root {
+	/* Primary Colors - From style-guide.md */
+	--bright-blue: hsl(220, 98%, 61%);
+	--check-background: linear-gradient(
+		135deg,
+		hsl(192, 100%, 67%),
+		hsl(280, 87%, 65%)
+	);
+
+	/* Light Theme */
+	--lt-bg: hsl(0, 0%, 98%);
+	--lt-todo-bg: hsl(0, 0%, 100%);
+	--lt-text-primary: hsl(235, 19%, 35%);
+	--lt-text-secondary: hsl(236, 9%, 61%);
+	--lt-text-tertiary: hsl(233, 11%, 84%);
+	--lt-border: hsl(233, 11%, 84%);
+	--lt-shadow: hsl(233, 30%, 90%);
+	--lt-hover: hsl(235, 19%, 35%);
+
+	/* Dark Theme */
+	--dt-bg: hsl(235, 21%, 11%);
+	--dt-todo-bg: hsl(235, 24%, 19%);
+	--dt-text-primary: hsl(234, 39%, 85%);
+	--dt-text-secondary: hsl(234, 11%, 52%);
+	--dt-text-tertiary: hsl(233, 14%, 35%);
+	--dt-border: hsl(237, 14%, 26%);
+	--dt-shadow: hsl(235, 21%, 8%);
+	--dt-hover: hsl(236, 33%, 92%);
+
+	/* Active Theme (Default: Light) */
+	--bg-color: var(--lt-bg);
+	--todo-bg: var(--lt-todo-bg);
+	--text-primary: var(--lt-text-primary);
+	--text-secondary: var(--lt-text-secondary);
+	--text-tertiary: var(--lt-text-tertiary);
+	--border-color: var(--lt-border);
+	--shadow-color: var(--lt-shadow);
+	--hover-color: var(--lt-hover);
+}
+
+/* Dark Theme Override */
+[data-theme="dark"] {
+	--bg-color: var(--dt-bg);
+	--todo-bg: var(--dt-todo-bg);
+	--text-primary: var(--dt-text-primary);
+	--text-secondary: var(--dt-text-secondary);
+	--text-tertiary: var(--dt-text-tertiary);
+	--border-color: var(--dt-border);
+	--shadow-color: var(--dt-shadow);
+	--hover-color: var(--dt-hover);
+}
+
+/* ===== BASE STYLES ===== */
+body {
+	font-family: "Josefin Sans", sans-serif;
+	font-size: 18px;
+	font-weight: 400;
+	background-color: var(--bg-color);
+	color: var(--text-primary);
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.app-container {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+}
